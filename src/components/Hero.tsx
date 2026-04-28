@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const slides = [
-  "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?w=1920&q=80",
-  "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1920&q=80",
-  "https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?w=1920&q=80",
+  "https://images.unsplash.com/photo-1502904550040-7534597429ae?w=1920&q=80",
+  "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1920&q=80",
+  "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80",
 ];
 
 const RACE_DATE = new Date("2026-08-30T06:00:00").getTime();
@@ -24,7 +24,6 @@ function useCountdown() {
   return t;
 }
 
-// Particles for atmosphere — client-only to avoid hydration mismatch
 function Particles() {
   const [particles, setParticles] = useState<Array<{ w: number; h: number; l: number; t: number; dur: number; del: number; op: number }>>([]);
 
@@ -69,68 +68,47 @@ export default function Hero() {
   const [cur, setCur] = useState(0);
   const cd = useCountdown();
   const sectionRef = useRef<HTMLElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  const midRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
 
   const next = useCallback(() => setCur((p) => (p + 1) % slides.length), []);
   useEffect(() => { const id = setInterval(next, 6000); return () => clearInterval(id); }, [next]);
 
-  // Scroll + mouse driven parallax
+  // Scroll-only parallax (no mouse shake)
   useEffect(() => {
     let raf = 0;
-    const onMouse = (e: MouseEvent) => {
-      mouseRef.current = {
-        x: (e.clientX / window.innerWidth - 0.5) * 2,
-        y: (e.clientY / window.innerHeight - 0.5) * 2,
-      };
-    };
     const animate = () => {
       const scrollY = window.scrollY;
-      const { x, y } = mouseRef.current;
-
-      if (bgRef.current) {
-        bgRef.current.style.transform = `translate(${x * 20}px, ${y * 10 + scrollY * 0.3}px) scale(1.15)`;
-      }
-      if (midRef.current) {
-        midRef.current.style.transform = `translate(${x * 10}px, ${scrollY * 0.15}px)`;
-      }
       if (contentRef.current) {
-        contentRef.current.style.transform = `translate(${x * 8}px, ${y * 5 + scrollY * 0.5}px)`;
+        contentRef.current.style.transform = `translateY(${scrollY * 0.4}px)`;
         contentRef.current.style.opacity = `${Math.max(1 - scrollY * 0.003, 0)}`;
       }
       raf = requestAnimationFrame(animate);
     };
-
-    window.addEventListener("mousemove", onMouse);
     raf = requestAnimationFrame(animate);
-    return () => { window.removeEventListener("mousemove", onMouse); cancelAnimationFrame(raf); };
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
     <section ref={sectionRef} className="relative h-[120vh] min-h-[700px] overflow-hidden bg-accent">
-      {/* LAYER 1: Sky / Background image — deepest, moves most */}
+      {/* Background slides — all rendered, only opacity toggles (no blue flash) */}
       {slides.map((src, i) => (
-        <div key={i} className={`absolute inset-0 transition-opacity duration-[2s] ${i === cur ? "opacity-100" : "opacity-0"}`}>
-          <div
-            ref={i === cur ? bgRef : undefined}
-            className="absolute inset-[-60px] bg-cover bg-center will-change-transform"
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        </div>
+        <div
+          key={i}
+          className={`absolute inset-[-20px] bg-cover bg-center transition-opacity duration-[2s] scale-105 ${i === cur ? "opacity-100" : "opacity-0"}`}
+          style={{ backgroundImage: `url(${src})` }}
+        />
       ))}
 
-      {/* LAYER 2: Mid-ground gradient haze */}
-      <div ref={midRef} className="absolute inset-0 will-change-transform z-[1]">
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 z-[1]">
         <div className="absolute bottom-0 inset-x-0 h-[60%] bg-gradient-to-t from-accent via-accent/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-accent/50 via-transparent to-accent/50" />
       </div>
 
-      {/* LAYER 3: Floating particles */}
+      {/* Floating particles */}
       <Particles />
 
-      {/* LAYER 4: Content — foreground */}
+      {/* Content */}
       <div ref={contentRef} className="absolute inset-0 z-[4] flex flex-col items-center justify-center text-center px-5 sm:px-8 will-change-transform">
         <div className="anim-fade-up">
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 backdrop-blur-md px-4 sm:px-6 py-1.5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-primary">
@@ -139,12 +117,12 @@ export default function Hero() {
         </div>
 
         <h1 className="anim-fade-up delay-2 mt-5 sm:mt-8 text-[2.5rem] sm:text-6xl lg:text-[7rem] font-black text-white leading-[0.9] tracking-tighter">
-          HYDERABAD
+          HOSUR MIDNIGHT
           <span className="block gradient-text mt-1 sm:mt-2">MARATHON</span>
         </h1>
 
         <p className="anim-fade-up delay-3 mt-4 sm:mt-6 text-sm sm:text-lg text-white/50 max-w-md font-light leading-relaxed">
-          Run through the City of Pearls. India&apos;s 2nd largest marathon awaits you.
+          Run through the night. The ultimate midnight marathon awaits you.
         </p>
 
         {/* Countdown */}
@@ -161,7 +139,7 @@ export default function Hero() {
 
         {/* CTA */}
         <div className="anim-fade-up delay-5 mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
-          <a href="#register" className="group relative overflow-hidden rounded-xl bg-primary px-8 sm:px-10 py-3.5 sm:py-4 text-sm font-bold text-white uppercase tracking-wider transition-all hover:-translate-y-0.5 anim-glow">
+          <a href="#register" className="group relative overflow-hidden rounded-xl bg-primary px-8 sm:px-10 py-3.5 sm:py-4 text-sm font-bold text-white uppercase tracking-wider transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30">
             <span className="relative z-10">Register Now</span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
@@ -188,7 +166,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Bottom fade into next section */}
+      {/* Bottom fade */}
       <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent z-[6]" />
     </section>
   );

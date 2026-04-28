@@ -8,8 +8,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NMDC Hyderabad Marathon 2026",
-  description: "India's 2nd largest marathon — run through the City of Pearls. Marathon, Half Marathon, 10K & 5K categories.",
+  title: "Hosur Midnight Marathon 2026",
+  description: "The ultimate midnight marathon — run through the night. Marathon, Half Marathon, 10K & 5K categories.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

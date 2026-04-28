@@ -17,7 +17,7 @@ const schedule = [
 export default function RaceWeekendPage() {
   return (
     <>
-      <PageHeader title="Race Weekend" subtitle="Two days of running, celebration, and community" bg="https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=1920&q=80" />
+      <PageHeader title="Race Weekend" subtitle="Two nights of running, celebration, and community" bg="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80" />
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="mx-auto max-w-4xl space-y-12">
           {schedule.map((day) => (

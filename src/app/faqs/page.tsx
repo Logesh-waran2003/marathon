@@ -4,8 +4,8 @@ import PageHeader from "@/components/PageHeader";
 import { useState } from "react";
 
 const faqs = [
-  { q: "Who are the organizers of NMDC Hyderabad Marathon?", a: "The marathon is organised by Hyderabad Runners Society (HRS), in association with NMDC Ltd., IDFC FIRST Bank, and the Government of Telangana." },
-  { q: "When is the marathon held?", a: "The NMDC Hyderabad Marathon is usually held on the last weekend of August every year. The 2026 edition is scheduled for August 29-30, 2026." },
+  { q: "Who are the organizers of Hosur Midnight Marathon?", a: "The marathon is organised by the Hosur Midnight Marathon team, in association with our title sponsors and partners." },
+  { q: "When is the marathon held?", a: "The Hosur Midnight Marathon is usually held on the last weekend of August every year. The 2026 edition is scheduled for August 29-30, 2026." },
   { q: "What are the race categories?", a: "There are four categories: Full Marathon (42.2 KM), Half Marathon (21.1 KM), 10KM Run, and 5KM Fun Run." },
   { q: "How do I register?", a: "Visit the registration page on our website, select your preferred category, create an account or log in, fill out the registration form, and complete payment online." },
   { q: "Can I transfer my registration to someone else?", a: "No, registrations are non-transferable. Each participant must register individually." },

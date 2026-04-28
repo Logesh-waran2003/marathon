@@ -90,7 +90,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3" aria-label="Home">
             <div className="flex flex-col leading-tight">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-white">HYDERABAD</span>
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-white">HOSUR MIDNIGHT</span>
               <span className="text-[10px] sm:text-xs font-bold tracking-[0.3em] text-primary uppercase">Marathon 2026</span>
             </div>
           </Link>

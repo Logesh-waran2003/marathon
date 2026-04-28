@@ -13,7 +13,7 @@ export default function ContactPage() {
             <div className="mt-8 space-y-6">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Email</p>
-                <p className="mt-1 text-sm text-muted">info@hyderabadmarathon.com</p>
+                <p className="mt-1 text-sm text-muted">info@hosurmidnightmarathon.com</p>
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Phone</p>
@@ -21,7 +21,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Address</p>
-                <p className="mt-1 text-sm text-muted">Hyderabad Runners Society<br />Gachibowli, Hyderabad<br />Telangana 500032, India</p>
+                <p className="mt-1 text-sm text-muted">Hosur Midnight Marathon<br />Hosur, Tamil Nadu<br />635109, India</p>
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Social</p>

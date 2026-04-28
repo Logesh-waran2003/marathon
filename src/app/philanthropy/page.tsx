@@ -10,11 +10,11 @@ const causes = [
 export default function PhilanthropyPage() {
   return (
     <>
-      <PageHeader title="Philanthropy" subtitle="Running for a cause, making a difference" bg="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1920&q=80" />
+      <PageHeader title="Philanthropy" subtitle="Running for a cause, making a difference" bg="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80" />
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="mx-auto max-w-4xl">
           <p className="text-base sm:text-lg text-muted leading-relaxed">
-            The NMDC Hyderabad Marathon is more than a race. It serves as a platform to reach out and support numerous causes by pledging runs. Over the years, the marathon has raised over ₹8,00,000 in funds to uplift those in need.
+            The Hosur Midnight Marathon is more than a race. It serves as a platform to reach out and support numerous causes by pledging runs. Over the years, the marathon has raised over ₹8,00,000 in funds to uplift those in need.
           </p>
           <div className="mt-12 grid sm:grid-cols-2 gap-5">
             {causes.map((c) => (

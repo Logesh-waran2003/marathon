@@ -5,7 +5,7 @@ const hotels = [
   { name: "Novotel HICC", type: "Recommended", distance: "5 km from venue", stars: 5, offer: "Special marathon rate available" },
   { name: "ITC Kohenur", type: "Recommended", distance: "3 km from venue", stars: 5, offer: "Complimentary early breakfast for runners" },
   { name: "Lemon Tree Gachibowli", type: "Budget Friendly", distance: "2 km from venue", stars: 3, offer: "10% discount with code HYDRUN26" },
-  { name: "Marriott Hyderabad", type: "Recommended", distance: "6 km from venue", stars: 5, offer: "Marathon weekend package available" },
+  { name: "Marriott", type: "Recommended", distance: "6 km from venue", stars: 5, offer: "Marathon weekend package available" },
   { name: "Holiday Inn Express", type: "Budget Friendly", distance: "4 km from venue", stars: 3, offer: "Group booking discounts available" },
 ];
 
