@@ -31,7 +31,7 @@ export default function PromoBanner() {
 
   return (
     <section className="relative py-32 sm:py-40 lg:py-52 px-5 sm:px-8 overflow-hidden">
-      <div ref={bgRef} className="absolute inset-[-40px] bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80')] bg-cover bg-center will-change-transform" />
+      <div ref={bgRef} className="absolute inset-[-40px] bg-[url('https://images.unsplash.com/photo-1502224562085-639556652f33?w=1920&q=80')] bg-cover bg-center will-change-transform" />
       <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent/90 to-accent/75" />
       <div className="absolute inset-0 overlay-pattern" />
 

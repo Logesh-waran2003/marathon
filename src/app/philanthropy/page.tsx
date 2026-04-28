@@ -10,7 +10,7 @@ const causes = [
 export default function PhilanthropyPage() {
   return (
     <>
-      <PageHeader title="Philanthropy" subtitle="Running for a cause, making a difference" bg="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80" />
+      <PageHeader title="Philanthropy" subtitle="Running for a cause, making a difference" bg="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" />
       <section className="py-16 sm:py-24 px-5 sm:px-8">
         <div className="mx-auto max-w-4xl">
           <p className="text-base sm:text-lg text-muted leading-relaxed">

@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const slides = [
-  "https://images.unsplash.com/photo-1502904550040-7534597429ae?w=1920&q=80",
-  "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1920&q=80",
-  "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&q=80",
+  "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?w=1920&q=80",
+  "https://images.unsplash.com/photo-1596727362302-b8d891c42ab8?w=1920&q=80",
+  "https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?w=1920&q=80",
 ];
 
 const RACE_DATE = new Date("2026-08-30T06:00:00").getTime();
