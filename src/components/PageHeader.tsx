@@ -6,7 +6,7 @@ interface Props {
   bg?: string;
 }
 
-export default function PageHeader({ title, subtitle, bg = "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1920&q=80" }: Props) {
+export default function PageHeader({ title, subtitle, bg = "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1920&q=80" }: Props) {
   return (
     <section className="relative pt-[120px] pb-14 overflow-hidden" aria-label={`${title} hero`}>
       {/* Background image */}

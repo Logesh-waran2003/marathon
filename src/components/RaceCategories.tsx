@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categories = [
-  { title: "Marathon", distance: "42.2 KM", slug: "marathon", img: "https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=600&q=80", time: "11:30 PM", fee: "₹1,800", color: "from-red-600 to-orange-500", tagline: "The Ultimate Challenge" },
-  { title: "Half Marathon", distance: "21.1 KM", slug: "half-marathon", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80", time: "12:00 AM", fee: "₹1,400", color: "from-blue-600 to-cyan-500", tagline: "Push Your Limits" },
-  { title: "10K Run", distance: "10 KM", slug: "10k-run", img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80", time: "12:30 AM", fee: "₹900", color: "from-emerald-600 to-teal-500", tagline: "Fast & Fierce" },
-  { title: "5K Run", distance: "5 KM", slug: "5k-run", img: "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?w=600&q=80", time: "1:00 AM", fee: "₹600", color: "from-purple-600 to-pink-500", tagline: "Fun For Everyone" },
+  { title: "Marathon", distance: "42.2 KM", slug: "marathon", img: "https://images.unsplash.com/photo-1461897104016-0b3b00cc81ee?w=600&q=80", time: "11:30 PM", fee: "₹1,800", color: "from-red-600 to-orange-500", tagline: "The Ultimate Challenge" },
+  { title: "Half Marathon", distance: "21.1 KM", slug: "half-marathon", img: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600&q=80", time: "12:00 AM", fee: "₹1,400", color: "from-blue-600 to-cyan-500", tagline: "Push Your Limits" },
+  { title: "10K Run", distance: "10 KM", slug: "10k-run", img: "https://images.unsplash.com/photo-1544899489-a083461b088c?w=600&q=80", time: "12:30 AM", fee: "₹900", color: "from-emerald-600 to-teal-500", tagline: "Fast & Fierce" },
+  { title: "5K Run", distance: "5 KM", slug: "5k-run", img: "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?w=600&q=80", time: "1:00 AM", fee: "₹600", color: "from-purple-600 to-pink-500", tagline: "Fun For Everyone" },
 ];
 
 export default function RaceCategories() {
