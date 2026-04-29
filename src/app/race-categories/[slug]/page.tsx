@@ -23,7 +23,7 @@ export default async function RaceCategoryPage({ params }: { params: Promise<{ s
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">Registration Fee</p>
               <p className="mt-1 text-3xl sm:text-4xl font-black text-white">{cat.fee} <span className="text-sm font-medium text-white/40">(Inc. 18% GST)</span></p>
             </div>
-            <a href={`/marathon/register?category=${cat.slug}`} className="rounded-lg bg-primary px-8 py-3 text-sm font-bold text-white uppercase tracking-wider hover:bg-primary-dark transition shrink-0">Register Now</a>
+            <Link href={`/register?category=${cat.slug}`} className="rounded-lg bg-primary px-8 py-3 text-sm font-bold text-white uppercase tracking-wider hover:bg-primary-dark transition shrink-0">Register Now</Link>
           </div>
 
           <div className="mt-12">

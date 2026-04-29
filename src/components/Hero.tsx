@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const slides = [
@@ -90,9 +91,9 @@ export default function Hero() {
         </div>
 
         <div className="anim-fade-up delay-5 mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
-          <a href="/marathon/register" className="rounded-xl bg-primary px-8 sm:px-10 py-3.5 sm:py-4 text-sm font-bold text-white uppercase tracking-wider transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30">
+          <Link href="/register" className="rounded-xl bg-primary px-8 sm:px-10 py-3.5 sm:py-4 text-sm font-bold text-white uppercase tracking-wider transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30">
             Register Now
-          </a>
+          </Link>
           <a href="#categories" className="rounded-xl px-8 sm:px-10 py-3.5 sm:py-4 text-sm font-bold text-white/70 uppercase tracking-wider border border-white/10 transition-all hover:bg-white/5 hover:-translate-y-0.5">
             Explore Races ↓
           </a>
