@@ -71,6 +71,10 @@ export default function RegisterContent() {
         });
         if (dbError) {
           setError("Payment successful but registration save failed. Please contact support with your payment ID: " + response.razorpay_payment_id);
+        } else {
+          getSupabase().functions.invoke("send-confirmation-email", {
+            body: { record: { name: form.name, email: form.email, phone: form.phone, race_category: selected.slug, amount: selected.feeAmount, razorpay_payment_id: response.razorpay_payment_id } },
+          }).catch(() => {});
         }
         setDone(true);
         setSubmitting(false);
