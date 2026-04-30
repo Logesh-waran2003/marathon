@@ -32,7 +32,7 @@ const categories = [
     img: "https://images.unsplash.com/photo-1486218119243-13883505764c?w=800&q=80",
     time: "1:00 AM",
     fee: "₹500",
-    color: "from-purple-600 to-pink-500",
+    color: "from-primary to-red-400",
     tagline: "First steps, first finish line",
   },
 ];

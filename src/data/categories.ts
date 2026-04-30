@@ -47,7 +47,7 @@ export const raceCategories: RaceCategory[] = [
     feeAmount: 500,
     startTime: "1:00 AM",
     img: "https://images.unsplash.com/photo-1486218119243-13883505764c?w=1920&q=80",
-    color: "from-purple-600 to-pink-500",
+    color: "from-primary to-red-400",
     route: "A fun, family-friendly route around the Hosur Town Centre area, perfect for first-time runners and families. The route is flat, well-lit, and supported with water stations.",
     amenities: ["Official race-day T-shirt", "Goodies bag", "Race BIB", "Water stations", "Medical support", "Post-race refreshments", "Finisher's medal"],
     criteria: ["Open to all ages (under 14 must be accompanied by guardian)", "Photo ID mandatory for adults"],

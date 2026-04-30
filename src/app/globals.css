@@ -11,6 +11,16 @@
   --gold: #d97706;
   --surface: #1e293b;
   --muted: #94a3b8;
+  color-scheme: dark;
+}
+
+/* Style native form controls for dark theme */
+select, input[type="date"] {
+  color-scheme: dark;
+}
+select option {
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 @theme inline {
@@ -81,6 +91,10 @@ body {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes scrollDot {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(4px); }
+}
 @keyframes widthGrow {
   from { width: 0; }
   to { width: 80px; }
@@ -113,10 +127,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #dc2626, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 /* Section divider */

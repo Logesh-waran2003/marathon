@@ -7,7 +7,7 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24 px-5 sm:px-8 bg-accent">
         <div className="mx-auto max-w-4xl">
-          <blockquote className="text-xl sm:text-2xl font-light italic text-white/50 text-center border-l-4 border-primary pl-6">
+          <blockquote className="text-xl sm:text-2xl font-light italic text-white/50 text-center pl-6">
             &ldquo;Run the Night, Light the Future&rdquo;
           </blockquote>
 

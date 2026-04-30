@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PageHeader from "@/components/PageHeader";
 import { raceCategories } from "@/data/categories";
+import { supabase } from "@/lib/supabase";
 
 const RAZORPAY_KEY = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
@@ -30,6 +31,7 @@ export default function RegisterContent() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
 
   const selected = raceCategories.find((c) => c.slug === selectedSlug) || raceCategories[0];
 
@@ -49,7 +51,27 @@ export default function RegisterContent() {
       currency: "INR",
       name: "Hosur Midnight Marathon",
       description: `${selected.title} — ${selected.distance}`,
-      handler: () => {
+      handler: async (response: { razorpay_payment_id: string }) => {
+        const { error: dbError } = await supabase.from("registrations").insert({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          whatsapp: form.whatsapp || null,
+          dob: form.dob,
+          gender: form.gender,
+          age_category: form.ageCategory,
+          city: form.city || null,
+          blood_group: form.bloodGroup || null,
+          tshirt_size: form.tshirtSize || null,
+          emergency_name: form.emergencyName || null,
+          emergency_phone: form.emergencyPhone || null,
+          race_category: selected.slug,
+          razorpay_payment_id: response.razorpay_payment_id,
+          amount: selected.feeAmount,
+        });
+        if (dbError) {
+          setError("Payment successful but registration save failed. Please contact support with your payment ID: " + response.razorpay_payment_id);
+        }
         setDone(true);
         setSubmitting(false);
       },
@@ -79,12 +101,16 @@ export default function RegisterContent() {
         <div className="mx-auto max-w-5xl">
           {done ? (
             <div className="text-center py-20">
-              <div className="w-20 h-20 mx-auto rounded-full bg-emerald-500/20 flex items-center justify-center mb-6">
-                <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <div className={`w-20 h-20 mx-auto rounded-full ${error ? "bg-amber-500/20" : "bg-emerald-500/20"} flex items-center justify-center mb-6`}>
+                {error ? (
+                  <svg className="w-10 h-10 text-amber-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                ) : (
+                  <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                )}
               </div>
-              <h2 className="text-3xl font-black text-white">You&apos;re Registered!</h2>
+              <h2 className="text-3xl font-black text-white">{error ? "Payment Received" : "You're Registered!"}</h2>
               <p className="mt-3 text-white/50 max-w-md mx-auto">
-                Confirmation details and WhatsApp community link have been sent to {form.email}.
+                {error || `Confirmation details and WhatsApp community link have been sent to ${form.email}.`}
               </p>
             </div>
           ) : (

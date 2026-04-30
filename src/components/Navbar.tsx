@@ -81,7 +81,7 @@ export default function Navbar() {
         ref={navRef}
         className={`fixed top-0 inset-x-0 z-50 flex items-center transition-all duration-300 ${
           scrolled || !isHome
-            ? "h-[70px] bg-black/40 backdrop-blur-xl border-b border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
+            ? "h-[70px] bg-accent/80 backdrop-blur-xl border-b border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
             : "h-[90px] bg-transparent"
         }`}
       >
@@ -172,7 +172,7 @@ export default function Navbar() {
       {drawerOpen && (
         <>
           <div
-            className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-[60] bg-accent/60 backdrop-blur-sm"
             onClick={closeDrawer}
             aria-hidden="true"
           />

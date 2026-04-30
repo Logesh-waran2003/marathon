@@ -63,7 +63,7 @@ export default async function RaceCategoryPage({ params }: { params: Promise<{ s
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {raceCategories.filter((c) => c.slug !== slug).map((c) => (
                 <Link key={c.slug} href={`/race-categories/${c.slug}`} className="rounded-xl bg-white/5 p-4 border border-white/10 hover:border-primary/20 hover:bg-white/10 transition text-center">
-                  <p className={`text-lg font-black bg-gradient-to-r ${c.color} bg-clip-text text-transparent`}>{c.distance}</p>
+                  <p className="text-lg font-black text-primary">{c.distance}</p>
                   <p className="mt-1 text-xs font-semibold text-white/40">{c.title}</p>
                 </Link>
               ))}

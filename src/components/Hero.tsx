@@ -59,7 +59,7 @@ export default function Hero() {
       ))}
 
       <div className="absolute inset-0 z-[1]">
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-accent/60" />
         <div className="absolute bottom-0 inset-x-0 h-[70%] bg-gradient-to-t from-accent via-accent/90 to-transparent" />
       </div>
 
@@ -103,7 +103,7 @@ export default function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[5] flex flex-col items-center gap-2 anim-fade-up delay-7">
         <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/20">Scroll</span>
         <div className="w-5 h-8 rounded-full border-2 border-white/20 flex justify-center pt-1.5">
-          <div className="w-1 h-2 rounded-full bg-primary animate-bounce" />
+          <div className="w-1 h-2 rounded-full bg-primary animate-[scrollDot_1.8s_ease-in-out_infinite]" />
         </div>
       </div>
 

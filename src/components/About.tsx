@@ -10,7 +10,7 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   useEffect(() => {
     if (!visible) return;
     let start = 0;
-    const dur = 2200;
+    const dur = 1200;
     const step = (ts: number) => {
       if (!start) start = ts;
       const p = Math.min((ts - start) / dur, 1);
@@ -84,7 +84,7 @@ export default function About() {
                   <Counter target={s.target} suffix={s.suffix} />
                 </p>
                 <p className="mt-2 text-sm font-bold text-white/80">{s.label}</p>
-                <p className="mt-0.5 text-[10px] text-white/30">{s.sub}</p>
+                <p className="mt-0.5 text-xs text-white/50">{s.sub}</p>
               </div>
             ))}
           </div>

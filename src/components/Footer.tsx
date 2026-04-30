@@ -36,11 +36,24 @@ export default function Footer() {
       {/* Supported by bar */}
       <div className="border-b border-white/5 py-10 sm:py-12 px-5 sm:px-8">
         <div className="mx-auto max-w-6xl text-center">
-          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-white/25 mb-6">Supported By</p>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {["Govt. of Tamil Nadu", "Hosur Municipality", "Elitzur Academy of Sports", "Rotary Club of Hosur Legends"].map((s) => (
-              <span key={s} className="rounded-full bg-white/[0.04] border border-white/[0.06] px-5 sm:px-6 py-2.5 text-[11px] sm:text-xs font-medium text-white/30 transition-all hover:text-white/50 hover:border-white/10 hover:bg-white/[0.06]">{s}</span>
-            ))}
+          <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-white/50 mb-6">Supported By</p>
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+            <div className="flex flex-col items-center gap-2">
+              <img src="/marathon/logos/tamilnadu.svg" alt="Government of Tamil Nadu" className="h-14 sm:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <span className="text-xs text-white/50">Govt. of Tamil Nadu</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <img src="/marathon/logos/hosur-municipality.png" alt="Hosur Municipality" className="h-14 sm:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <span className="text-xs text-white/50">Hosur Municipality</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <img src="/marathon/logos/elitzur-academy.png" alt="Elitzur Academy of Sports" className="h-14 sm:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <span className="text-xs text-white/50">Elitzur Academy of Sports</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <img src="/marathon/logos/rotary.svg" alt="Rotary Club of Hosur Legends" className="h-14 sm:h-16 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+              <span className="text-xs text-white/50">Rotary Club of Hosur Legends</span>
+            </div>
           </div>
         </div>
       </div>
@@ -53,14 +66,14 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <span className="text-xl sm:text-2xl font-black tracking-tight">HOSUR MIDNIGHT<span className="text-primary"> MARATHON</span></span>
             </Link>
-            <p className="mt-3 text-sm text-white/25 leading-relaxed max-w-xs">
+            <p className="mt-3 text-sm text-white/50 leading-relaxed max-w-xs">
               Organised by Elitzur Academy of Sports. Co-organised by Rotary Club of Hosur Legends. Run the Night, Light the Future.
             </p>
 
             {/* Social icons */}
             <div className="mt-6 flex gap-2.5">
               {socials.map((s) => (
-                <a key={s.label} href="#" aria-label={s.label} className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-white/30 hover:text-white hover:bg-white/10 hover:border-white/15 transition-all duration-300">
+                <a key={s.label} href="#" aria-label={s.label} className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 hover:border-white/15 transition-all duration-300">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">{s.icon}</svg>
                 </a>
               ))}
@@ -70,11 +83,11 @@ export default function Footer() {
           {/* Link columns */}
           {cols.map((c) => (
             <div key={c.title}>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-5">{c.title}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 mb-5">{c.title}</p>
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.label}>
-                    <Link href={l.href} className="text-sm text-white/25 hover:text-primary transition-colors duration-300">{l.label}</Link>
+                    <Link href={l.href} className="text-sm text-white/50 hover:text-primary transition-colors duration-300">{l.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -85,12 +98,12 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 py-6 px-5 sm:px-8">
-        <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/15">
+        <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-white/40">
           <p>&copy; {new Date().getFullYear()} Hosur Midnight Marathon. All Rights Reserved.</p>
           <div className="flex gap-5">
-            <Link href="/entry-denial-and-refund" className="hover:text-white/30 transition-colors">Terms</Link>
-            <Link href="/data-protection-policy" className="hover:text-white/30 transition-colors">Privacy</Link>
-            <Link href="/entry-denial-and-refund" className="hover:text-white/30 transition-colors">Refund Policy</Link>
+            <Link href="/entry-denial-and-refund" className="hover:text-white/60 transition-colors">Terms</Link>
+            <Link href="/data-protection-policy" className="hover:text-white/60 transition-colors">Privacy</Link>
+            <Link href="/entry-denial-and-refund" className="hover:text-white/60 transition-colors">Refund Policy</Link>
           </div>
         </div>
       </div>
