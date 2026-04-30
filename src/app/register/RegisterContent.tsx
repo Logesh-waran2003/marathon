@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import PageHeader from "@/components/PageHeader";
 import { raceCategories } from "@/data/categories";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 const RAZORPAY_KEY = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
 
@@ -52,7 +52,7 @@ export default function RegisterContent() {
       name: "Hosur Midnight Marathon",
       description: `${selected.title} — ${selected.distance}`,
       handler: async (response: { razorpay_payment_id: string }) => {
-        const { error: dbError } = await supabase.from("registrations").insert({
+        const { error: dbError } = await getSupabase().from("registrations").insert({
           name: form.name,
           email: form.email,
           phone: form.phone,
